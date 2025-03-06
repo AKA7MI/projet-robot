@@ -1,3 +1,6 @@
-# projet-robot
+# projet-robot-interface-web
 
-ceci est un test 
+Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx.
+Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
+Une fois le serveur installé ouvrez un terminal (sur windows tapez "windows"+r , puis cmd )
+Windows: 
