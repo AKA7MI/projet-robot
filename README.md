@@ -95,7 +95,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
         }
          </script>
         
-      ```
+      
     * Modifiez la deuxième ligne par :
     * ```
           var videoSrc =    "http://[your_ip]:8888/mystream/index.m3u8";
