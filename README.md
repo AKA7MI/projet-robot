@@ -6,7 +6,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
   * ouvrez un terminal (sur windows tapez "windows"+r , puis cmd )
   * Sur Windows: ``` cd C://le-chemin/du-dossier/où-est-mediamtx.exe ```
   * Pour démarrer le serveur tapez dans le terminal :  ```mediamtx.exe ```
-  * Vous devriez voir quelque chose de style :
+  * Vous devriez voir quelque chose du style :
        * ```
              2025/03/06 10:48:25 INF MediaMTX v1.11.3
              2025/03/06 10:48:25 INF configuration loaded from C:\Users\brune\OneDrive\Bureau\projet_robot_page_web\mediamtx\mediamtx.yml
@@ -15,4 +15,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
              2025/03/06 10:48:25 INF [RTMP] listener opened on :1935
              2025/03/06 10:48:25 INF [HLS] listener opened on :8888
              2025/03/06 10:48:25 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
-             2025/03/06 10:48:25 INF [SRT] listener opened on :8890 (UDP) ```
+             2025/03/06 10:48:25 INF [SRT] listener opened on :8890 (UDP)
+         ```
+
+    
