@@ -108,7 +108,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
    * copier votre fichier html dans le dossier html de nginx
    * Ensuite allez dans le fichier conf de nginx et ouvrez avec le bloc note le fichier nginx.conf
    * Allez dans la section ``` http :{```
-   * et modifiez : ```
+   * et modifiez :
    *                    server {
                             listen       80;
                             server_name  you_ip_adress;
