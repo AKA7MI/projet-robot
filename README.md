@@ -1,4 +1,4 @@
-# projet-robot-interface-web
+# projet robot interface web
 Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx, ainsi que la demarche pour démarrer le serveur et transférer la video sur une page web au format hls
 ## Installation Mediamtx :
 * Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
@@ -31,8 +31,10 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
        * Puis "Integrated Camera"
        * Validez
   * Dans le dossier "Mediamtx" vous trouverez un fichier nommé "mediamtx.yml", C'est le panneaux de configuration de votre serveur :
+    * Pour ouvrir le fichier yml, utilisez le bloc note
     * Scrollez tout en bas et tapez ``` paths :
                                             all_others : ```
+    * Enregistrez le fichier puis redémarrer le serveur
     * Vous êtes prêts à lancer votre premier stream !
   * Il ne vous reste plus qu'à cliquer sur "commencer le stream", vous diffusez votre video sur le serveur !
     * si tout se passe bien vous devriez avoir dans le terminal quelque chose comme :
@@ -46,7 +48,28 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
 
  ## Mettre la vidéo sur la page Web :
  * Commencez par créer un dossier nommé "hls" dans le dossier "mediamtx"
- * Ensuite ouvrez le dossier 
+ * Ensuite ouvrez le fichier "mediamtx.yml"
+   * Scrollez jusqu'à ```# Global settings -> HLS server```
+   * modifiez votre fichier pour obtenir :
+     * ```
+       hls: yes
+       hlsAddress: :8888
+       hlsEncryption: no
+       hlsServerKey: server.key
+       hlsServerCert: server.crt
+       hlsAllowOrigin: '*'
+       hlsTrustedProxies: []
+       hlsAlwaysRemux: yes
+       hlsVariant: mpegts
+       hlsSegmentCount: 5
+       hlsSegmentDuration: 4s
+       hlsPartDuration: 200ms
+       hlsSegmentMaxSize: 50M
+       hlsDirectory: ./hls
+       hlsMuxerCloseAfter: 300s
+       ```
+   * enregistrez les modifications puis relancer le serveur
+   * dans le fichier 
 
     
 
