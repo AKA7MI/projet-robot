@@ -1,5 +1,11 @@
 # projet robot interface web
 Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx, ainsi que la demarche pour démarrer le serveur et transférer la video sur une page web au format hls
+## Nginx :
+
+
+
+
+
 ## Installation Mediamtx :
 * Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
 * Une fois le serveur installé :
