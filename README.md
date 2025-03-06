@@ -98,7 +98,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
       ```
     * Modifiez la deuxième ligne par :
     * ```
-       var videoSrc = "http://[your_ip]:8888/mystream/index.m3u8";
+          var videoSrc =    "http://[your_ip]:8888/mystream/index.m3u8";
       ```
      * ou si vous avez une clé de stream par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
                                                 ```
