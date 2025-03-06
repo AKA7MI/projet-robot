@@ -1,13 +1,13 @@
-# projet robot interface web
+# Projet Robot Interface Web
 Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx, ainsi que la demarche pour démarrer le serveur et transférer la video sur une page web au format hls
 ## Nginx :
-* créez un dossier dans lequel vous allez mettre les dossiers suivant:
+* Créez un dossier dans lequel vous allez mettre les dossiers suivant:
 * "conf","contrib","docs","html","logs","temp" et "nginx.exe
 
 ## Installation Mediamtx :
 * Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
 * Une fois le serveur installé :
-  * ouvrez un terminal (sur windows tapez "windows"+r , puis cmd, puis "entrée")
+  * Ouvrez un terminal (sur windows tapez "windows"+r , puis cmd, puis "entrée")
   * Sur Windows: ``` cd C://le-chemin/du-dossier/où-est-mediamtx.exe ```
   * Pour démarrer le serveur tapez dans le terminal :  ```mediamtx.exe ```
   * Vous devriez voir quelque chose du style :
@@ -23,14 +23,14 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
          ```
 ## Flux vidéo sur le serveur :
 * Si vous voulez envoyer le flux video de votre webcam sur le serveur :
-  * installer OBS Studio
-  * allez dans paramètres, puis "Stream(flux)", dans "Service" sélectionnez "Personnalisé"
+  * Installer OBS Studio
+  * Allez dans paramètres, puis "Stream(flux)", dans "Service" sélectionnez "Personnalisé"
      * Dans "serveur" tapez ```rtmp://localhost:1935/mystream```
-     * ou tapez ```rtmp://[your_ip]:1935/mystream```
+     * Ou tapez ```rtmp://[your_ip]:1935/mystream```
      * vous pouvez entrer un clé de stream si vous voulez (mais ce sera plus long à taper après )
   * Ensuite il faut ajouter une source :
      * Pour votre webcam :
-       * cliquez sur "Périphérique de  Capture Vidéo"
+       * Cliquez sur "Périphérique de  Capture Vidéo"
        * Puis "OK"
        * Puis "Integrated Camera"
        * Validez
@@ -47,14 +47,14 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
         2025/03/06 11:28:09 INF [RTMP] [conn [::1]:50571] is publishing to path 'mystream', 2 tracks (H264, MPEG-4 Audio)
         ```
   * Vérifier dans VLC que vous avez bien une video en allant dans "Média", puis "Ouvrir un flux réseau" :*
-    * et tapez  ```rtmp://localhost:1935/mystream```
-    * si vous avez une clé de stream : ```rtmp://localhost:1935/mystream/your_stream_key```
+    * Et tapez  ```rtmp://localhost:1935/mystream```
+    * Si vous avez une clé de stream : ```rtmp://localhost:1935/mystream/your_stream_key```
 
  ## Mettre la vidéo sur la page Web :
  * Commencez par créer un dossier nommé "hls" dans le dossier "mediamtx"
  * Ensuite ouvrez le fichier "mediamtx.yml"
    * Scrollez jusqu'à ```# Global settings -> HLS server```
-   * modifiez votre fichier pour obtenir :
+   * Modifiez votre fichier pour obtenir :
      * ```
        hls: yes
        hlsAddress: :8888
@@ -72,9 +72,9 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
        hlsDirectory: ./hls
        hlsMuxerCloseAfter: 300s
        ```
-   * enregistrez les modifications puis relancer le serveur
+   * Enregistrez les modifications puis relancer le serveur
    * Ouvrez le fichier "test-video-hls2.html" avec le bloc note :
-      * dans la partie scipt :
+      * Dans la partie scipt :
       * ```
         <script>
         var video = document.getElementById('video');
@@ -99,15 +99,15 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
     * ```
           var videoSrc =    "http://[your_ip]:8888/mystream/index.m3u8";
       ```
-     * ou si vous avez une clé de stream par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
+     * Ou si vous avez une clé de stream par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
                                                 ```
  * Enregistrer les modifications puis ouvrez un nouvel onglet dans le navigateur et glisser le fichier dans le navigateur pour l'interpreter
  * Voilà vous avez afficher une page web avec la vidéo de votre webcam !
  * Pour la mettre en ligne :
-   * copier votre fichier html dans le dossier html de nginx
+   * Copier votre fichier html dans le dossier html de nginx
    * Ensuite allez dans le fichier conf de nginx et ouvrez avec le bloc note le fichier nginx.conf
    * Allez dans la section ``` http :{```
-   * et modifiez :
+   * Et modifiez :
    *                    server {
                             listen       80;
                             server_name  you_ip_adress;
@@ -116,9 +116,9 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
                                            root C://your_path/nginx/html;
                                            index  test_video_hls2.html;
                                          }
-   * enregistrez et lancer nginx en double-cliquant sur nginx.exe
+   * Enregistrez et lancer nginx en double-cliquant sur nginx.exe
    * Vous devriez maintenant pouvoir accéder à la vidéo en tapant dans la barre de recherche de votre navigateur: ```http://[your_ip_adress]/test_video_hls2.html```
-   * ou si vous avez défini localhost comme "server name": ```http://localhost/test_video_hls2.html```
+   * Ou si vous avez défini localhost comme "server name": ```http://localhost/test_video_hls2.html```
 
       
 
