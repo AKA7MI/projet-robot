@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Video & Sensor Data</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; }
+    .container { position: relative; display: inline-block; }
+    video { width: 80%; border-radius: 10px; }
+    .overlay {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Live Video & Sensor Data</h1>
+
+  <div class="container">
+    <video controls autoplay>
+      <source src="https://your-stream-url.m3u8" type="application/x-mpegURL">
+    </video>
+    <div class="overlay" id="sensorOverlay">Loading sensor data...</div>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "your-api-key",
+      authDomain: "your-project.firebaseapp.com",
+      databaseURL: "https://projet-robot-ptb-a-default-rtdb.europe-west1.firebasedatabase.app/",
+      projectId: "your-project-id",
+      storageBucket: "your-project.appspot.com",
+      messagingSenderId: "your-messaging-sender-id",
+      appId: "your-app-id"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    function updateSensorData(snapshot) {
+      let data = snapshot.val();
+      let text = `🌡️ Temp: ${data.temperatureC}°C / ${data.temperatureF}°F  💧 Humidity: ${data.humidity}%`;
+      document.getElementById('sensorOverlay').innerText = text;
+    }
+
+    database.ref("/sensor").on("value", updateSensorData);
+  </script>
+</body>
+</html>
