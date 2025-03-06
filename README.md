@@ -1,10 +1,8 @@
 # projet robot interface web
 Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx, ainsi que la demarche pour démarrer le serveur et transférer la video sur une page web au format hls
 ## Nginx :
-
-
-
-
+* créez un dossier dans lequel vous allez mettre les dossiers suivant:
+* "conf","contrib","docs","html","logs","temp" et "nginx.exe
 
 ## Installation Mediamtx :
 * Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
@@ -102,9 +100,26 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
     * ```
        var videoSrc = "http://[your_ip]:8888/mystream/index.m3u8";
       ```
-     * ou si vous avez une clé de streaam par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
+     * ou si vous avez une clé de stream par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
                                                 ```
  * Enregistrer les modifications puis ouvrez un nouvel onglet dans le navigateur et glisser le fichier dans le navigateur pour l'interpreter
+ * Voilà vous avez afficher une page web avec la vidéo de votre webcam !
+ * Pour la mettre en ligne :
+   * copier votre fichier html dans le dossier html de nginx
+   * Ensuite allez dans le fichier conf de nginx et ouvrez avec le bloc note le fichier nginx.conf
+   * Allez dans la section ``` http :{```
+   * et modifiez : ```
+   *                    server {
+                            listen       80;
+                            server_name  you_ip_adress;
+
+                            location / {
+                                           root C://your_path/nginx/html;
+                                           index  test_video_hls2.html;
+                                         }
+   * enregistrez et lancer nginx en double-cliquant sur nginx.exe
+   * Vous devriez maintenant pouvoir accéder à la vidéo en tapant dans la barre de recherche de votre navigateur: ```http://[your_ip_adress]/test_video_hls2.html```
+   * ou si vous avez défini localhost comme "server name": ```http://localhost/test_video_hls2.html```
 
       
 
