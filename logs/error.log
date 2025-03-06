@@ -1,0 +1,22 @@
+2025/03/03 13:57:05 [emerg] 21872#25152: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/03 13:58:05 [error] 20556#29644: *2 CreateFile() "C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test_video_hls2.html"
+2025/03/03 13:59:57 [emerg] 19144#31680: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/03 14:00:41 [error] 20556#29644: *5 CreateFile() "C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/html/favicon.ico" failed (2: The system cannot find the file specified), client: 10.31.64.248, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "10.31.64.248", referrer: "http://10.31.64.248/test_video_hls2.html"
+2025/03/03 14:02:12 [error] 20556#29644: *7 CreateFile() "C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/html/favicon.ico" failed (2: The system cannot find the file specified), client: 10.31.64.143, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "10.31.64.248", referrer: "http://10.31.64.248/test_video_hls2.html"
+2025/03/03 14:06:28 [emerg] 12340#15612: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/04 15:01:18 [emerg] 29560#18668: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/04 15:02:06 [emerg] 28800#19360: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/04 15:28:53 [emerg] 29680#7256: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet robot interface\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:44
+2025/03/04 22:18:27 [emerg] 34872#14432: invalid number of arguments in "root" directive in C:\Users\brune\OneDrive\Bureau\projet_robot_page_web\nginx-1.27.4\nginx-1.27.4/conf/nginx.conf:65
+2025/03/04 22:36:15 [crit] 12868#38736: *1 GetFileAttributesEx() "C:\Users\brune\OneDrive\Bureau\projet_robot_page_web
+ginx-1.27.4
+ginx-1.27.4\html" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: 37.71.179.20, request: "GET / HTTP/1.1", host: "localhost"
+2025/03/04 22:36:15 [crit] 12868#38736: *2 CreateFile() "C:\Users\brune\OneDrive\Bureau\projet_robot_page_web
+ginx-1.27.4
+ginx-1.27.4\html/favicon.ico" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: 37.71.179.20, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2025/03/04 22:41:02 [notice] 8768#37308: signal process started
+2025/03/04 22:43:00 [notice] 22252#34224: signal process started
+2025/03/04 22:46:43 [notice] 39832#39656: signal process started
+2025/03/04 22:47:09 [error] 41852#30008: *1 directory index of "C:/Users/brune/OneDrive/Bureau/projet_robot_page_web/nginx-1.27.4/nginx-1.27.4/html/" is forbidden, client: 127.0.0.1, server: 37.71.179.20, request: "GET / HTTP/1.1", host: "localhost"
+2025/03/04 22:47:10 [error] 41852#30008: *1 CreateFile() "C:/Users/brune/OneDrive/Bureau/projet_robot_page_web/nginx-1.27.4/nginx-1.27.4/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: 37.71.179.20, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2025/03/05 10:01:57 [error] 41852#30008: *4 directory index of "C:/Users/brune/OneDrive/Bureau/projet_robot_page_web/nginx-1.27.4/nginx-1.27.4/html/" is forbidden, client: 10.31.65.66, server: 37.71.179.20, request: "GET / HTTP/1.1", host: "10.31.64.248"

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Flux Video</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <h1>Streaming en Direct</h1>
+
+    <div style="display: flex; gap: 20px;">
+        <!-- Premier flux -->
+        <div>
+            <h2>Flux 1</h2>
+            <video id="video1" controls width="480" height="270"></video>
+        </div>
+
+        <!-- Deuxième flux -->
+        <div>
+            <h2>Flux 2</h2>
+            <video id="video2" controls width="480" height="270"></video>
+        </div>
+    </div>
+
+    <script>
+        function setupHLS(videoElementId, streamURL) {
+            var video = document.getElementById(videoElementId);
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(streamURL);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamURL;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play();
+                });
+            }
+        }
+
+        // Remplace [ip_du_serveur] par l'IP réelle de ton serveur
+        setupHLS("video1", "http://10.31.82.113:8888/live/stream/index.m3u8");
+        setupHLS("video2", "http://10.31.82.113:8888/mystream/index.m3u8");
+    </script>
+</body>
+</html>
