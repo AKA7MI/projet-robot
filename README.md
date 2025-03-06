@@ -3,6 +3,22 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
 ## Nginx :
 * Créez un dossier dans lequel vous allez mettre les dossiers suivant:
 * "conf","contrib","docs","html","logs","temp" et "nginx.exe
+## Comment avoir accès à son adresse ip :
+* Ouvrez un terminal (sur windows tapez "windows"+r , puis cmd, puis "entrée")
+* Sur Windows tapez dans le terminal :``` ipconfig```
+* Scrollez jusqu'à ```Carte Réseaux Sans Fils Wi-Fi```
+* Vous devriez avoir quelque chose comme ceci :
+* ```
+  Carte réseau sans fil Wi-Fi :
+
+   Suffixe DNS propre à la connexion. . . : DLink
+   Adresse IPv6 de liaison locale. . . . .: un truc sous cette forme : 2001:db8:0:0:0:0:1428:57ab
+   Adresse IPv4. . . . . . . . . . . . . .: 10.31.82.113
+   Masque de sous-réseau. . . . . . . . . : 277.277.272.0
+   Passerelle par défaut. . . . . . . . . : 10.31.89.274
+  ```
+
+* Récuperez l'adresse IPv4 qui sera sous cette forme :```Adresse IPv4. . . . . . . . . . . . . .: 10.31.82.113```
 
 ## Installation Mediamtx :
 * Pour installer le serveur mediamtx allez ici et suivez les instrctions: https://github.com/bluenviron/mediamtx?tab=readme-ov-file
