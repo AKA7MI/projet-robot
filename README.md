@@ -69,7 +69,38 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
        hlsMuxerCloseAfter: 300s
        ```
    * enregistrez les modifications puis relancer le serveur
-   * dans le fichier 
+   * Ouvrez le fichier "test-video-hls2.html" avec le bloc note :
+      * dans la partie scipt :
+      * ```
+        <script>
+        var video = document.getElementById('video');
+        var videoSrc = "http://10.31.67.234:8888/relay/index.m3u8";
+
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
+         </script>
+        
+      ```
+    * Modifiez la deuxième ligne par :
+    * ```
+       var videoSrc = "http://[your_ip]:8888/mystream/index.m3u8";
+      ```
+     * ou si vous avez une clé de streaam par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
+                                                ```
+ * Enregistrer les modifications puis ouvrez un nouvel onglet dans le navigateur et glisser le fichier dans le navigateur pour l'interpreter
+
+      
 
     
 
