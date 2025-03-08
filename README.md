@@ -170,7 +170,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
         setupHLS("video1", "http://[you_server's_ip]:8888/live/stream/index.m3u8");
         setupHLS("video2", "http://[you_server's_ip]:8888/mystream/index.m3u8");
     </script>
-   ```
+  
 * Remplacer l'adresse Ip du seveur par la vôtre :
 * Notez que votre adresse Ip (et donc celle du serveur puisqu'il est hébergé sur votre machine) change chaque fois que vous changez de réseau, Il faut donc à CHAQUE FOIS vérifiez que vous avez bien rentré la bonne adresse Ip dans TOUT les documents
 * Ensuite enregistrez les modifications que vous avez apporter au fichier puis Il ne vous reste plus qu'à "Drag n drop" votre fichier html dans un nouvel onglet de navigateur ou à l'ouvrir avec un navigateur
