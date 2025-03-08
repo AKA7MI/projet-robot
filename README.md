@@ -1,5 +1,5 @@
 # Projet Robot Interface Web
-Vous trouverez ici la plupart des élémennts permettant de génerer la page web à l'aide du serveur mediamtx, ainsi que la demarche pour démarrer le serveur et transférer la video sur une page web au format hls
+Vous trouverez ici la plupart des éléments permettant de génerer la page web à l'aide du serveur Mediamtx, ainsi que la démarche pour démarrer le serveur et transférer la vidéo sur une page web au format hls
 ## Nginx :
 * Créez un dossier dans lequel vous allez mettre les dossiers suivant:
 * "conf","contrib","docs","html","logs","temp" et "nginx.exe
@@ -57,7 +57,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
     * Enregistrez le fichier puis redémarrer le serveur
     * Vous êtes prêts à lancer votre premier stream !
   * Il ne vous reste plus qu'à cliquer sur "commencer le stream", vous diffusez votre video sur le serveur !
-    * si tout se passe bien vous devriez avoir dans le terminal quelque chose comme :
+    * si tout se passe bien vous devriez avoir dans le terminal quelque chose comme ceci :
       * ```
         2025/03/06 11:28:06 INF [RTMP] [conn [::1]:50571] opened
         2025/03/06 11:28:09 INF [RTMP] [conn [::1]:50571] is publishing to path 'mystream', 2 tracks (H264, MPEG-4 Audio)
@@ -90,7 +90,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
        ```
    * Enregistrez les modifications puis relancer le serveur
    * Ouvrez le fichier "test-video-hls2.html" avec le bloc note :
-      * Dans la partie scipt :
+      * Allez dans la partie scipt :
       * ```
         <script>
         var video = document.getElementById('video');
@@ -117,7 +117,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
       ```
      * Ou si vous avez une clé de stream par : ``` var videoSrc = "http://[you_ip]:8888/mystream/your_stream_key/index.m3u8";
                                                 ```
- * Enregistrer les modifications puis ouvrez un nouvel onglet dans le navigateur et glisser le fichier dans le navigateur pour l'interpreter
+ * Enregistrez les modifications puis ouvrez un nouvel onglet dans le navigateur et glisser le fichier dans le navigateur pour l'interpreter
  * Voilà vous avez afficher une page web avec la vidéo de votre webcam !
  * Pour la mettre en ligne :
    * Copier votre fichier html dans le dossier html de nginx
@@ -141,7 +141,7 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
 * Il faut commencer par envoyer un deuxième flux sur votre serveur :
   * Vous pouvez avoir un deuxième flux vidéo à l'aide de l'application "Larix Broadcaster" à installer sur Apple Store et PLay Store
   * Dans Larix Broadcaster, allez dans "Paramètres" puis "Connections", cliquez sur le "+" puis sur "Connection"
-  * Dans l'item "URL" tapez :```rtmp://[you_server's_ip]:1935/my_camera/stream```
+  * Dans l'item "URL" tapez :```rtmp://[you_server's_ip]:1935/live/stream```
   * Cliquez sur "Save" puis lancer la diffusion
   * Notez que votre téléphone doit être connecté au même réseau que votre ordinateur
 * Vérifiez dans le terminal que vous avez bien deux flux vidéo sur votre serveur
