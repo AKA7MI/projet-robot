@@ -136,6 +136,45 @@ Vous trouverez ici la plupart des élémennts permettant de génerer la page web
    * Vous devriez maintenant pouvoir accéder à la vidéo en tapant dans la barre de recherche de votre navigateur: ```http://[your_ip_adress]/test_video_hls2.html```
    * Ou si vous avez défini localhost comme "server name": ```http://localhost/test_video_hls2.html```
 
+## Comment afficher deux flux vidéo sur une page web : 
+* Ce module part du principe que vous avez réussit les étapes précèdentes et que vouq continuez d'envoyer la vidéo de votre webcam sur le serveur
+* Il faut commencer par envoyer un deuxième flux sur votre serveur :
+  * Vous pouvez avoir un deuxième flux vidéo à l'aide de l'application "Larix Broadcaster" à installer sur Apple Store et PLay Store
+  * Dans Larix Broadcaster, allez dans "Paramètres" puis "Connections", cliquez sur le "+" puis sur "Connection"
+  * Dans l'item "URL" tapez :```rtmp://[you_server's_ip]:1935/my_camera/stream```
+  * Cliquez sur "Save" puis lancer la diffusion
+  * Notez que votre téléphone doit être connecté au même réseau que votre ordinateur
+* Vérifiez dans le terminal que vous avez bien deux flux vidéo sur votre serveur
+* Ouvrez avec le bloc note le fichier "page_web_de_2video_hls.html"
+* Scrollez tout en bas pour avoir ceci :
+  * ```
+    <script>
+        function setupHLS(videoElementId, streamURL) {
+            var video = document.getElementById(videoElementId);
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(streamURL);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamURL;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play();
+                });
+            }
+        }
+
+        // Remplace [you_server's_ip] par l'IP réelle de ton serveur
+        setupHLS("video1", "http://[you_server's_ip]:8888/live/stream/index.m3u8");
+        setupHLS("video2", "http://[you_server's_ip]:8888/mystream/index.m3u8");
+    </script>
+   ```
+* Remplacer l'adresse Ip du seveur par la vôtre :
+* Notez que votre adresse Ip (et donc celle du serveur puisqu'il est hébergé sur votre machine) change chaque fois que vous changez de réseau, Il faut donc à CHAQUE FOIS vérifiez que vous avez bien rentré la bonne adresse Ip dans TOUT les documents
+* Ensuite enregistrez les modifications que vous avez apporter au fichier puis Il ne vous reste plus qu'à "Drag n drop" votre fichier html dans un nouvel onglet de navigateur ou à l'ouvrir avec un navigateur
+* Vous avez deux flux vidéo sur la même page web !!
       
 
     
